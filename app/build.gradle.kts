@@ -7,6 +7,7 @@ android {
     namespace = "com.pwr266521.lista4"
     compileSdk = 34
 
+
     defaultConfig {
         applicationId = "com.pwr266521.lista4"
         minSdk = 24
@@ -54,6 +55,10 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.squareup.retrofit2:converter-scalars:2.3.0")
     implementation ("io.coil-kt:coil-compose:2.1.0")
+    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
+
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0-RC")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
@@ -64,6 +69,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
 
+    testImplementation("androidx.arch.core:core-testing:2.1.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.pwr266521.lista4.model.FlickrResponse
 import com.pwr266521.lista4.repository.FlickrRepository
 import kotlinx.coroutines.launch
+import java.lang.RuntimeException
 
 class FlickrViewModel(private val repository: FlickrRepository) : ViewModel() {
     var photos = mutableStateOf<FlickrResponse?>(null)
@@ -15,7 +16,7 @@ class FlickrViewModel(private val repository: FlickrRepository) : ViewModel() {
         loadPhotos()
     }
 
-    private fun loadPhotos() {
+    fun loadPhotos() {
         viewModelScope.launch {
             isLoading.value = true
             photos.value = repository.getPublicPhotos()
