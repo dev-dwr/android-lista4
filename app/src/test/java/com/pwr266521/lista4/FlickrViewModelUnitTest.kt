@@ -76,8 +76,6 @@ class FlickrViewModelTest {
 
     private fun createSampleData(): FlickrResponse {
         val media = Media(m = "https://example.com/media.jpg")
-
-        // Create sample Item
         val item = Item(
             title = "Sample Item",
             link = "https://example.com/item",
