@@ -65,11 +65,14 @@ class FlickrViewModelTest {
 
 
     @Test
-    fun loadPhotos_Error() = testDispatcher.runBlockingTest {
+    fun `should set null values when api call fails`() = testDispatcher.runBlockingTest {
+        //given
         `when`(service.getPublicPhotos()).thenThrow(RuntimeException())
 
+        //when
         viewModel.loadPhotos()
 
+        //then
         assertEquals(true, viewModel.isLoading.value)
         assertEquals(null, viewModel.photos.value)
     }
